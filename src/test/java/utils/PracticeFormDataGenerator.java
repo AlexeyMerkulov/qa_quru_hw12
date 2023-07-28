@@ -67,12 +67,23 @@ public class PracticeFormDataGenerator {
     }
 
     public String getRandomCity(String stateName) {
-        return switch (stateName) {
-            case "NCR" -> faker.options().option("Delhi", "Gurgaon", "Noida");
-            case "Uttar Pradesh" -> faker.options().option("Agra", "Lucknow", "Merrut");
-            case "Haryana" -> faker.options().option("Karnal", "Panipat");
-            case "Rajasthan" -> faker.options().option("Jaipur", "Jaiselmer");
-            default -> "";
-        };
+        String randomCity;
+        switch (stateName) {
+            case ("NCR"):
+                randomCity = faker.options().option("Delhi", "Gurgaon", "Noida");
+                break;
+            case ("Uttar Pradesh"):
+                randomCity = faker.options().option("Agra", "Lucknow", "Merrut");
+                break;
+            case ("Haryana"):
+                randomCity = faker.options().option("Karnal", "Panipat");
+                break;
+            case ("Rajasthan"):
+                randomCity = faker.options().option("Jaipur", "Jaiselmer");
+                break;
+            default:
+                randomCity = "";
+        }
+        return randomCity;
     }
 }
